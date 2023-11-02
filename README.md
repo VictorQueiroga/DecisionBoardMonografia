@@ -7,7 +7,11 @@ Uma ferramenta para auxiliar os gestores das empresas públicas do estado de Per
 Para executar a aplicação é necessário: 
   1. Ter instalado o Python na versão 3.9.12
   2. Usar no terminal o comando "pip install -r requirements.txt" para instalar as depedências
-  3. Ir na pasta do projeto pelo terminal e digitar o comando "streamlit run main.py"
+  3. Ir no arquivo configDatabase.py e colocar na constante "HOST" o host do SGBD MySql onde os dados estão armazenados
+  4. Ir no arquivo configDatabase.py e colocar na constante "DATABASE" o nome do banco no SGBD MySql onde os dados estão armazenados
+  5. Ir no arquivo configDatabase.py e colocar na constante "USER" o nome do usuário do banco do SGBD MySql onde os dados estão armazenados
+  6. Ir no arquivo configDatabase.py e colocar na constante "PASSWORD" a senha do usuário do banco do SGBD MySql onde os dados estão armazenados
+  7. Ir na pasta do projeto pelo terminal e digitar o comando "streamlit run main.py"
 
 ## Como utilizar
 
@@ -18,9 +22,10 @@ No menu a esquerda da aplicação será possivel escolher por exemplo a página 
      ![QtdMes](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/qtd-mes.png)
   3. Quantidade de reclamações por status
      ![QtdStatus](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/qtd-status.png)
-  4. As 5 palavras mais frequentes nas reclamações
-     ![Palavras](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/palavras.png)
-
+  4. As palavras mais frequentes nas reclamações
+     ![Reclamacoes](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/wordcloud-reclamacoes.png)
+  5. As palavras mais frequentes nas respostas
+     ![Respostas](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/wordcloud-respostas.png)
 Na página "historico" é possível consultar o histórico das decisões tomadas:
      ![Historico](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/historico.png).
 
