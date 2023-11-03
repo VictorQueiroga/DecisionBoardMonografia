@@ -17,20 +17,20 @@ Para executar a aplicação é necessário:
 
 No menu a esquerda da aplicação será possivel escolher por exemplo a página "board" onde o usuário poderá selecionar a empresa, o local e palavras chave para pesquisar nas reclamações, exibindo as seguintes informações:
   1. Quantidade de reclamações por ano
-     ![QtdAno](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/qtd-ano.png)
+     ![QtdAno](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/qtd-ano.png)
   2. Quantidade de reclamações por mês
-     ![QtdMes](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/qtd-mes.png)
+     ![QtdMes](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/qtd-mes.png)
   3. Quantidade de reclamações por status
-     ![QtdStatus](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/qtd-status.png)
+     ![QtdStatus](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/qtd-status.png)
   4. As palavras mais frequentes nas reclamações
-     ![Reclamacoes](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/wordcloud-reclamacoes.png)
+     ![Reclamacoes](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/wordcloud-reclamacoes.png)
   5. As palavras mais frequentes nas respostas
-     ![Respostas](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/wordcloud-respostas.png)
+     ![Respostas](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/wordcloud-respostas.png)
 Na página "historico" é possível consultar o histórico das decisões tomadas:
-     ![Historico](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/historico.png).
+     ![Historico](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/historico.png).
 
 Na página "registrar" é possível escrever uma nova decisão a ser tomada e ao clicar no botão "Registrar" essa decisão será salva no histórico:
-     ![Registrar](https://github.com/VictorQueiroga/DecisionBoard/blob/main/assets/registrar.png).
+     ![Registrar](https://github.com/VictorQueiroga/DecisionBoardMonografia/blob/main/assets/registrar.png).
      
 ## Autor
 
