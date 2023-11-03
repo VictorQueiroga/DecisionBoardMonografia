@@ -23,35 +23,39 @@ with st.sidebar:
     
     reclamacoes_filtradas = reclamacoes.query('empresa == @filtro_empresa & local == @filtro_local')
     reclamacoes_filtradas = reclamacoes_filtradas[reclamacoes_filtradas.texto.str.contains(filtro_palavra_chave)]
-
-    count_status = reclamacoes_filtradas['status'].value_counts()
-    fig_status = graphFactory.graficoDeStatus(count_status)
-
-
-    count_anos = pd.to_datetime(reclamacoes_filtradas['datahora']).dt.year.value_counts()
-    fig_anos = graphFactory.graficoDeAnos(count_anos)
-
-    count_mes = pd.to_datetime(reclamacoes_filtradas['datahora']).dt.month.apply(lambda x: configDate.MESES[x-1]).value_counts()
-    fig_meses = graphFactory.graficoDeMeses(count_mes)
     
-    #fig_palavras = graphFactory.graficoDePalavras(reclamacoes_filtradas, 'texto')
-    
-    wordcloud_reclamacoes = graphFactory.wordCloud(reclamacoes_filtradas, 'texto')
-    figrec, axrec = graphFactory.plt.subplots(figsize=(10,6))
-    axrec.imshow(wordcloud_reclamacoes, interpolation='bilinear')
-    axrec.set_axis_off()
-    graphFactory.plt.title('Palavras mais frequentes das reclamações')
-    fig_reclamacoes = graphFactory.plt.imshow(wordcloud_reclamacoes)
-    
-    wordcloud_respostas = graphFactory.wordCloud(reclamacoes_filtradas, 'resposta')
-    figres, axres = graphFactory.plt.subplots(figsize=(10,6))
-    axres.imshow(wordcloud_respostas, interpolation='bilinear')
-    axres.set_axis_off()
-    graphFactory.plt.title('Palavras mais frequentes das respostas')
-    fig_respostas =  graphFactory.plt.imshow(wordcloud_respostas)
+    if(reclamacoes_filtradas.shape[0] > 0):
+        
+        count_status = reclamacoes_filtradas['status'].value_counts()
+        fig_status = graphFactory.graficoDeStatus(count_status)
 
-st.plotly_chart(fig_status)
-st.plotly_chart(fig_anos)
-st.plotly_chart(fig_meses)
-st.pyplot(fig_reclamacoes.figure)
-st.pyplot(fig_respostas.figure)
+
+        count_anos = pd.to_datetime(reclamacoes_filtradas['datahora']).dt.year.value_counts()
+        fig_anos = graphFactory.graficoDeAnos(count_anos)
+
+        count_mes = pd.to_datetime(reclamacoes_filtradas['datahora']).dt.month.apply(lambda x: configDate.MESES[x-1]).value_counts()
+        fig_meses = graphFactory.graficoDeMeses(count_mes)
+    
+        
+        wordcloud_reclamacoes = graphFactory.wordCloud(reclamacoes_filtradas, 'texto')
+        figrec, axrec = graphFactory.plt.subplots(figsize=(10,6))
+        axrec.imshow(wordcloud_reclamacoes, interpolation='bilinear')
+        axrec.set_axis_off()
+        graphFactory.plt.title('Palavras mais frequentes das reclamações')
+        fig_reclamacoes = graphFactory.plt.imshow(wordcloud_reclamacoes)
+    
+        wordcloud_respostas = graphFactory.wordCloud(reclamacoes_filtradas, 'resposta')
+        figres, axres = graphFactory.plt.subplots(figsize=(10,6))
+        axres.imshow(wordcloud_respostas, interpolation='bilinear')
+        axres.set_axis_off()
+        graphFactory.plt.title('Palavras mais frequentes das respostas')
+        fig_respostas =  graphFactory.plt.imshow(wordcloud_respostas)
+
+if(reclamacoes_filtradas.shape[0] > 0):  
+    st.plotly_chart(fig_status)
+    st.plotly_chart(fig_anos)
+    st.plotly_chart(fig_meses)
+    st.pyplot(fig_reclamacoes.figure)
+    st.pyplot(fig_respostas.figure)
+else:
+    st.write("Não foram encontradas reclamações com esses filtros")

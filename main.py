@@ -8,7 +8,7 @@ def main():
         st.title("Decision Board")
         logo = Image.open('decision_board.jpg')
         st.image(logo, use_column_width=True)
-    
+    st.write("Boas vindas ao Decision Board")
 
 if __name__ == '__main__':
     main()
